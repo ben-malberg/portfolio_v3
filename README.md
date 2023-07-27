@@ -4,7 +4,7 @@
 
 <h3>Stack</h3>
 <ul>
-    <li>NextJS</li>
+    <li>Next.js</li>
     <li>Sanity.io</li>
     <li>React</li>
     <li>Typescript</li>
