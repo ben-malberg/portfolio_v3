@@ -18,6 +18,8 @@ export async function getProjects(): Promise<Project[]> {
             content,
             "image1": image1.asset->url,
             "image2": image2.asset->url,
+            altImage1,
+            altImage2,
             url,
         }`
     );

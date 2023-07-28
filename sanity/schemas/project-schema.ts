@@ -31,26 +31,22 @@ const project = {
             title: "Screenshot1",
             type: "image",
             options: { hotspot: true },
-            fields: [
-                {
-                    name: "alt",
-                    title: "Alt Text",
-                    type: "string",
-                },
-            ],
         },
         {
             name: "image2",
             title: "Screenshot2",
             type: "image",
             options: { hotspot: true },
-            fields: [
-                {
-                    name: "alt",
-                    title: "Alt Text",
-                    type: "string",
-                },
-            ],
+        },
+        {
+            name: "altImage1",
+            title: "Alt Text for Image1",
+            type: "string",
+        },
+        {
+            name: "altImage2",
+            title: "Alt Text for Image2",
+            type: "string",
         },
         {
             name: "url",
