@@ -1,3 +1,4 @@
+import { PortableText } from "@portabletext/react";
 import { getProjects } from "@/sanity/sanity-utils";
 import Image from "next/image";
 
@@ -25,6 +26,7 @@ const AllProjects = async () => {
                                 className="imageStyle"
                             />
                         </div>
+                        <PortableText value={project.content} />
                     </div>
                 );
             })}

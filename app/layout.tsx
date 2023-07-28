@@ -1,8 +1,11 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Raleway } from 'next/font/google'
+   
+  export const raleway = Raleway({
+    subsets: ['latin'],
+    display: 'swap',
+  })
 
 export const metadata: Metadata = {
   title: 'Ben Malberg Portfolio',
@@ -16,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={raleway.className}>{children}</body>
     </html>
   )
 }

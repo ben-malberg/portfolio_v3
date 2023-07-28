@@ -111,14 +111,13 @@ a {
 
 .imagesContainer {
     display: flex;
+    padding: 1rem;
 }
 
 .imageContainer {
-    align-content:start;
     position: relative;
     height: 20rem;
     width: 100%;
-    border: 1px solid red;
 }
 
 .imageStyle {
