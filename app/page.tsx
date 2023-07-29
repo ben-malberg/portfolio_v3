@@ -1,9 +1,13 @@
 import AllProjects from "@/components/AllProjects";
+import Navbar from "@/components/Navbar";
 
 const Home = () => {
     return (
-        <AllProjects />
+        <>
+            <Navbar />
+            <AllProjects />
+        </>
     );
-}
+};
 
 export default Home;

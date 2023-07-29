@@ -9,25 +9,27 @@ const AllProjects = async () => {
         <>
             {projects.map((project) => {
                 return (
-                    <div key={project._id} className="imagesContainer">
-                        <div className="imageContainer">
-                            <Image
-                                src={project.image1}
-                                fill
-                                alt={project.altImage1}
-                                className="imageStyle"
-                            />
-                        </div>
-                        <div className="imageContainer">
-                            <Image
-                                src={project.image2}
-                                fill
-                                alt={project.altImage2}
-                                className="imageStyle"
-                            />
+                    <>
+                        <div key={project._id} className="imagesContainer">
+                            <div className="webImageContainer">
+                                <Image
+                                    src={project.image1}
+                                    fill
+                                    alt={project.altImage1}
+                                    className="imageStyle"
+                                />
+                            </div>
+                            <div className="mobileImageContainer">
+                                <Image
+                                    src={project.image2}
+                                    fill
+                                    alt={project.altImage2}
+                                    className="imageStyle"
+                                />
+                            </div>
                         </div>
                         <PortableText value={project.content} />
-                    </div>
+                    </>
                 );
             })}
         </>

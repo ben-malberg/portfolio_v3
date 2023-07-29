@@ -1,4 +1,5 @@
 import { createClient, groq } from "next-sanity";
+import { ImageLib } from "@/types/ImageLib";
 import { Project } from "@/types/Project";
 
 const client = createClient({
@@ -21,6 +22,19 @@ export async function getProjects(): Promise<Project[]> {
             altImage1,
             altImage2,
             url,
+        }`
+    );
+}
+
+export async function getImage(): Promise<ImageLib[]> {
+    return client.fetch(
+        groq`*[_type == 'imageLib']{
+            _id,
+            _createdAt,
+            name,
+            "slug": slug.current,
+            "image": image.asset->url,
+            altImage,
         }`
     );
 }
