@@ -1,16 +1,18 @@
 body {
     background-color: black;
     color: white;
+    max-width: 1536px;
+    margin: 0 auto;
 }
 
 .navbarContainer {
     height: 5rem;
     width: 100%;
-    max-width: 1536px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color:#331800;
+    color: #ffffff;
 }
 
 .navbarLogoContainer {
@@ -29,18 +31,21 @@ body {
     margin: 0;
     padding: 0 1.5rem 0 0;
     display: flex;
-    gap: 1rem;
+    gap: 5rem;
+    font-size: .75rem;
 }
 
 .imagesContainer {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .webImageContainer {
     position: relative;
     height: 25rem;
     width: 50%;
+    border: 1px solid red;
     /* border: 1px solid red; */
 }
 .mobileImageContainer {
