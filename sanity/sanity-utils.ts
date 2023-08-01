@@ -26,7 +26,7 @@ export async function getProjects(): Promise<Project[]> {
     );
 }
 
-export async function getImage(): Promise<ImageLib[]> {
+export async function getImages(): Promise<ImageLib[]> {
     return client.fetch(
         groq`*[_type == 'imageLib']{
             _id,
@@ -36,5 +36,19 @@ export async function getImage(): Promise<ImageLib[]> {
             "image": image.asset->url,
             altImage,
         }`
+    );
+}
+
+export async function getImage(imageSlug: string): Promise<ImageLib> {
+    return client.fetch(
+        groq`*[_type == 'imageLib' && slug.current == $imageSlug][0]{
+            _id,
+            _createdAt,
+            name,
+            "slug": slug.current,
+            "image": image.asset->url,
+            altImage,
+        }`,
+        { imageSlug }
     );
 }

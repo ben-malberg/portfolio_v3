@@ -1,11 +1,7 @@
 import { getImage } from "@/sanity/sanity-utils";
 
-const PullImage = async (slug: string) => {
-    const allImages = await getImage();
-    const selectedImage = allImages.find(
-        (imageName) => imageName.slug === slug
-    )!;
-    return [selectedImage.image, selectedImage.altImage];
+const PullImage = async (imageSlug: string) => {
+    return await getImage(imageSlug);
 };
 
 export default PullImage;
