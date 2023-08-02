@@ -5,8 +5,7 @@ const Bannerfy = (imageObject: {
     image: string;
     altImage: string;
 }) => {
-    console.log(imageObject);
-    return (
+    return (imageObject ? 
         <Image
             key={imageObject._id}
             src={imageObject.image}
@@ -15,7 +14,8 @@ const Bannerfy = (imageObject: {
             height={142}
             className="bannerImage"
         />
-    );
+    : <div>error</div>
+    )
 };
 
 export default Bannerfy;

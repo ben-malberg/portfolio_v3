@@ -110,16 +110,46 @@ body {
     width: 100%;
     object-fit: cover;
     margin: 0;
+    filter: brightness(.5);
+    transition : .15s filter ease-in-out, .15s -webkit-filter ease-in-out;
 }
 
 .bannerImage:hover {
     cursor: pointer;
-    filter: invert(1);
-    /* transition : .2s filter linear, .2s -webkit-filter linear; */
-
+    filter: brightness(1);
+    transition : .15s filter ease-in-out, .15s -webkit-filter ease-in-out;
 }
 
-.bannerTest {
+.bannerContainer {
     display: flex;
-    flex-flow: column nowrap;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bannerText {
+    margin-left: -15rem;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 300;
+    color: white;
+    background-color: rgba(0, 0, 0, .75);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    /* border-right: 2px solid black; */
+    width: 10rem;
+    height: 200px;
+    line-height: 200px;
+    text-align: right;
+    padding: 0rem 1rem 0rem;
+}
+
+.bannerImage:hover ~ .bannerText {
+    pointer-events: none;
+    margin-left: 0rem;
+}
+
+.testText {
+    color: white;
+    cursor: pointer
 }

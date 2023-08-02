@@ -3,18 +3,18 @@
 import PullImage from "@/utils/PullImage";
 import { useEffect, useState } from "react";
 
-const Bio = (props: any) => {
-    const { setShowBio, showBio, setShowWork, setShowContact } = props;
+const Work = (props: any) => {
+    const { setShowBio, setShowWork, showWork, setShowContact } = props;
     const [bannerImage, setBannerImage] = useState(null);
 
     useEffect(() => {
-        const bannerfied = PullImage("cactus-banner");
+        const bannerfied = PullImage("straw-banner");
         setBannerImage(bannerfied);
     }, []);
 
     const handleToggleBio = () => {
-        setShowBio(!showBio);
-        setShowWork(false);
+        setShowWork(!showWork);
+        setShowBio(false);
         setShowContact(false);
     };
 
@@ -23,11 +23,11 @@ const Bio = (props: any) => {
             {/* I want to click on this div to hide/reveal my bio */}
             <div className="bannerContainer" onClick={handleToggleBio}>
                 {bannerImage}
-                <span className="bannerText">BIO</span>
+                <span className="bannerText">WORK</span>
             </div>
-            {showBio && <div className="testText">BIO DISPLAYING</div>}
+            {showWork && <div className="testText">WORK DISPLAYING</div>}
         </>
     );
 };
 
-export default Bio;
+export default Work;

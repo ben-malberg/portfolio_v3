@@ -1,13 +1,13 @@
 import AllProjects from "@/components/AllProjects";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Bio from "@/components/Bio";
+import BioToggler from "@/utils/BannerToggler";
 
 const Home = () => {
     return (
         <>
-            {/* <Navbar /> */}
-            <Bio />
+            <Navbar />
+            <BioToggler />
             {/* <AllProjects /> */}
         </>
     );

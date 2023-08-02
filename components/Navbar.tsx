@@ -4,15 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = async () => {
-    const [selectedImage, selectedAlt] = await PullImage("bm-logo-white");
+    const logoObject = await getImage("bm-logo-white");
 
     return (
         <div className="navbarContainer">
             <div className="navbarLogoContainer">
                 <Image
-                    src={selectedImage ? selectedImage : ""}
+                    src={logoObject.image}
                     fill
-                    alt={selectedImage ? selectedAlt : ""}
+                    alt={logoObject.altImage}
                     className="navbarLogo"
                 />
             </div>
