@@ -1,4 +1,4 @@
-import PullImage from "@/utils/PullImage";
+import PullImage from "@/utils/BannerfyImage";
 import PullImages from "@/utils/PullImages";
 import Image from "next/image";
 
@@ -37,15 +37,10 @@ const Hero = async () => {
                 height={142}
                 className="heroLogo"
             />
-        )
-    })
+        );
+    });
 
-    return (
-        <>
-            {matchedResults}
-        </>
-    )
-
+    return <>{matchedResults}</>;
 };
 
 export default Hero;

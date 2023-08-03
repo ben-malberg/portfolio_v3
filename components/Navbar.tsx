@@ -1,20 +1,21 @@
-import { getImage } from "@/sanity/sanity-utils";
+import useSWR from 'swr';
 import PullImage from "@/utils/PullImage";
-import Image from "next/image";
-import Link from "next/link";
 
-const Navbar = async () => {
-    const logoObject = await getImage("bm-logo-white");
+const Navbar = () => {
+
+    // SWR
+    // Create a function to fetch the logo data
+    const fetchLogo = async () => PullImage("bm-logo-white");
+    // Use the useSWR hook to fetch the data and handle caching
+    const { data: logo, error } = useSWR("bm-logo-white", fetchLogo);
+    if (error) {
+        console.error("Error fetching BM logo: ", error);
+    }
 
     return (
         <div className="navbarContainer">
             <div className="navbarLogoContainer">
-                <Image
-                    src={logoObject.image}
-                    fill
-                    alt={logoObject.altImage}
-                    className="navbarLogo"
-                />
+                {logo ? logo : <div className="navbarLogo" style={{fontSize: '.75rem'}}>BEN MALBERG</div>}
             </div>
             <ul className="navbarMenuItems">
                 <li>BIO</li>

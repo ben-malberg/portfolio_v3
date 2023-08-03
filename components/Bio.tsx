@@ -1,16 +1,17 @@
-"use client";
-
-import PullImage from "@/utils/PullImage";
-import { useEffect, useState } from "react";
+import BannerfyImage from "@/utils/BannerfyImage";
+import useSWR from "swr";
 
 const Bio = (props: any) => {
     const { setShowBio, showBio, setShowWork, setShowContact } = props;
-    const [bannerImage, setBannerImage] = useState(null);
 
-    useEffect(() => {
-        const bannerfied = PullImage("cactus-banner");
-        setBannerImage(bannerfied);
-    }, []);
+    // SWR
+    // Create a function to fetch the banner data
+    const fetchBanner = async () => BannerfyImage("cactus-banner");
+    // Use the useSWR hook to fetch the data and handle caching
+    const { data: bannerImage, error } = useSWR("cactus-banner", fetchBanner);
+    if (error) {
+        console.error("Error fetching banner: ", error);
+    }
 
     const handleToggleBio = () => {
         setShowBio(!showBio);
@@ -22,10 +23,25 @@ const Bio = (props: any) => {
         <>
             {/* I want to click on this div to hide/reveal my bio */}
             <div className="bannerContainer" onClick={handleToggleBio}>
-                {bannerImage}
+                {bannerImage ? (
+                    bannerImage
+                ) : (
+                    <div
+                        style={{
+                            width: "100%",
+                            height: 142,
+                            border: "1px dotted red",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+                        loading
+                    </div>
+                )}
                 <span className="bannerText">BIO</span>
             </div>
-            {showBio && <div className="testText">BIO DISPLAYING</div>}
+            <div className={`testText ${showBio ? 'visible' : ""}`}>BIO DISPLAYING</div>
         </>
     );
 };

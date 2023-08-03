@@ -6,7 +6,6 @@ import BioToggler from "@/utils/BannerToggler";
 const Home = () => {
     return (
         <>
-            <Navbar />
             <BioToggler />
             {/* <AllProjects /> */}
         </>

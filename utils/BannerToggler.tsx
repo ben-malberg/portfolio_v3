@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useEffect, useState } from "react";
+import Navbar from "@/components/Navbar";
 import Bio from "../components/Bio";
 import Work from "../components/Work";
 import Contact from "../components/Contact";
@@ -28,24 +29,27 @@ const BannerToggler = () => {
 
     return (
         <>
-            <Bio
-                setShowBio={setShowBio}
-                showBio={showBio}
-                setShowWork={setShowWork}
-                setShowContact={setShowContact}
-            />
-            <Work
-                setShowBio={setShowBio}
-                setShowWork={setShowWork}
-                showWork={showWork}
-                setShowContact={setShowContact}
-            />
-            <Contact
-                setShowBio={setShowBio}
-                setShowWork={setShowWork}
-                setShowContact={setShowContact}
-                showContact={showContact}
-            />
+            <Navbar />
+            <div className="blah">
+                <Bio
+                    setShowBio={setShowBio}
+                    showBio={showBio}
+                    setShowWork={setShowWork}
+                    setShowContact={setShowContact}
+                />
+                <Work
+                    setShowBio={setShowBio}
+                    setShowWork={setShowWork}
+                    showWork={showWork}
+                    setShowContact={setShowContact}
+                />
+                <Contact
+                    setShowBio={setShowBio}
+                    setShowWork={setShowWork}
+                    setShowContact={setShowContact}
+                    showContact={showContact}
+                />
+            </div>
         </>
     );
 };
