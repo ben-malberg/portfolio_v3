@@ -1,53 +1,63 @@
 "use client";
 
 import React from "react";
-import { useEffect, useState } from "react";
+import { useReducer } from "react";
 import Navbar from "@/components/Navbar";
-import Bio from "../components/Bio";
-import Work from "../components/Work";
-import Contact from "../components/Contact";
+import Banner from "@/components/Banner";
+
+const initialState = {
+    showStates: [false, false, false],
+};
+
+interface bannersStatus {
+    showStates: boolean[];
+}
+
+interface actionObject {
+    type: string;
+    index: number;
+}
+
+const reducer = (state: bannersStatus, action: actionObject) => {
+    const { index } = action;
+    const showStates = [...state.showStates];
+    const updatedShowStates = showStates.map((_, idx) => {
+        return idx === index ? !showStates[index] : false;
+    });
+
+    return {
+        showStates: updatedShowStates,
+    };
+};
 
 const BannerToggler = () => {
-    const [showBio, setShowBio] = useState(false);
-    const [showWork, setShowWork] = useState(false);
-    const [showContact, setShowContact] = useState(false);
+    const [state, dispatch] = useReducer(reducer, initialState);
 
-    useEffect(() => {
-        if (showBio) {
-            setShowWork(false);
-            setShowContact(false);
-        }
-        if (showWork) {
-            setShowBio(false);
-            setShowContact(false);
-        }
-        if (showContact) {
-            setShowBio(false);
-            setShowWork(false);
-        }
-    }, [setShowBio, setShowWork, setShowContact]);
+    const handleToggle = (index: number) => {
+        dispatch({ type: "TOGGLE", index });
+    };
 
     return (
         <>
-            <Navbar />
-            <div className="blah">
-                <Bio
-                    setShowBio={setShowBio}
-                    showBio={showBio}
-                    setShowWork={setShowWork}
-                    setShowContact={setShowContact}
+            <div className="compensateShift">
+                <Navbar />
+                <Banner
+                    bannerName="BIO"
+                    bannerSlug="cactus-banner"
+                    bannerShown={state.showStates[0]}
+                    handleToggleBanner={() => handleToggle(0)}
                 />
-                <Work
-                    setShowBio={setShowBio}
-                    setShowWork={setShowWork}
-                    showWork={showWork}
-                    setShowContact={setShowContact}
+                <Banner
+                    bannerName="WORK"
+                    bannerSlug="straw-banner"
+                    bannerShown={state.showStates[1]}
+                    handleToggleBanner={() => handleToggle(1)}
                 />
-                <Contact
-                    setShowBio={setShowBio}
-                    setShowWork={setShowWork}
-                    setShowContact={setShowContact}
-                    showContact={showContact}
+                <Banner
+                    bannerName="CONTACT"
+                    bannerSlug="tree-banner"
+                    bannerShown={state.showStates[2]}
+                    handleToggleBanner={() => handleToggle(2)}
                 />
             </div>
         </>
