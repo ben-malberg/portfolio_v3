@@ -19,7 +19,6 @@ interface actionObject {
 }
 
 const reducer = (state: bannersStatus, action: actionObject) => {
-    console.log(action);
     const { index } = action;
     let updatedShowStates = null;
     if (index === 3) {
@@ -39,7 +38,6 @@ const BannerToggler = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const handleToggle = (index: number) => {
-        console.log("index", index);
         dispatch({ type: "TOGGLE", index });
     };
 

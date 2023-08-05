@@ -18,6 +18,21 @@ body {
     color: #ffffff;
 }
 
+@media screen and (max-width: 599px) {
+    .navbarContainer {
+        width: auto;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+    }
+
+    .navbarMenuItems li {
+        display: none;
+    }
+}
+
 .navbarLogoContainer {
     position: relative;
     height: 2.5rem;
@@ -32,7 +47,6 @@ body {
 
 .navbarLogo:hover {
     filter: invert();
-    /* background: white; */
 }
 
 .navbarLogo:active {
