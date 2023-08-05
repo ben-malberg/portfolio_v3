@@ -1,8 +1,11 @@
-import useSWR from 'swr';
+import useSWR from "swr";
 import PullImage from "@/utils/PullImage";
 
-const Navbar = () => {
+interface BannerProps {
+    handleToggleBanner: (bannerIndex: number) => void;
+}
 
+const Navbar = ({ handleToggleBanner }: BannerProps) => {
     // SWR
     // Create a function to fetch the logo data
     const fetchLogo = async () => PullImage("bm-logo-white");
@@ -14,13 +17,19 @@ const Navbar = () => {
 
     return (
         <div className="navbarContainer">
-            <div className="navbarLogoContainer">
-                {logo ? logo : <div className="navbarLogo" style={{fontSize: '.75rem'}}>BEN MALBERG</div>}
+            <div className="navbarLogoContainer" onClick={() => handleToggleBanner(3)}>
+                {logo ? (
+                    logo
+                ) : (
+                    <div className="navbarLogo" style={{ fontSize: ".75rem" }}>
+                        BEN MALBERG
+                    </div>
+                )}
             </div>
             <ul className="navbarMenuItems">
-                <li>BIO</li>
-                <li>WORK</li>
-                <li>CONTACT</li>
+                <li onClick={() => handleToggleBanner(0)}>BIO</li>
+                <li onClick={() => handleToggleBanner(1)}>WORK</li>
+                <li onClick={() => handleToggleBanner(2)}>CONTACT</li>
             </ul>
         </div>
     );

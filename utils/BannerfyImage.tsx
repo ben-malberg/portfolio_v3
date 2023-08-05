@@ -9,7 +9,7 @@ const BannerfyImage = async (imageSlug: string) => {
             key={bannerObject._id}
             src={bannerObject.image}
             alt={bannerObject.altImage}
-            width={1008}
+            width={1536}
             height={142}
             className="bannerImage"
         />

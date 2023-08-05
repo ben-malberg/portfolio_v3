@@ -4,14 +4,14 @@ import useSWR from "swr";
 interface BannerProps {
     bannerName: string;
     bannerSlug: string;
-    bannerShown: boolean;
+    bannerSelected: boolean;
     handleToggleBanner: () => void;
 }
 
 const Banner = ({
     bannerName,
     bannerSlug,
-    bannerShown,
+    bannerSelected,
     handleToggleBanner,
 }: BannerProps) => {
     // SWR
@@ -38,8 +38,8 @@ const Banner = ({
                 {bannerImage ? bannerImage : <div style={loaderDiv}></div>}
                 <span className="bannerTitle">{bannerName}</span>
             </div>
-            <div className={`bannerContent ${bannerShown ? "expanded" : null}`}>
-                {bannerShown && <div>CONTENT TBC</div>}
+            <div className={`bannerContent ${bannerSelected ? "expanded" : null}`}>
+                {bannerSelected && <div>CONTENT TBC</div>}
             </div>
         </>
     );
