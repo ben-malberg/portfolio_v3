@@ -17,11 +17,25 @@ const Navbar = ({ handleToggleBanner }: BannerProps) => {
 
     return (
         <div className="navbarContainer">
-            <div className="navbarLogoContainer" onClick={() => handleToggleBanner(3)}>
+            <div
+                className="navbarLogoContainer"
+                onClick={() => handleToggleBanner(3)}
+            >
                 {logo ? (
-                    logo
+                    <>
+                        <div className="navbarLogo">{logo}</div>
+                        <div
+                            className="navbarLogoText"
+                            style={{ fontSize: ".70rem" }}
+                        >
+                            BEN MALBERG
+                        </div>
+                    </>
                 ) : (
-                    <div className="navbarLogo" style={{ fontSize: ".75rem" }}>
+                    <div
+                        className="navbarLogoText"
+                        style={{ fontSize: ".75rem" }}
+                    >
                         BEN MALBERG
                     </div>
                 )}
