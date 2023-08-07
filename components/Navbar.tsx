@@ -34,7 +34,7 @@ const Navbar = ({ handleToggleBanner }: BannerProps) => {
                 ) : (
                     <div
                         className="navbarLogoText"
-                        style={{ fontSize: ".75rem" }}
+                        style={{ fontSize: ".70rem" }}
                     >
                         BEN MALBERG
                     </div>

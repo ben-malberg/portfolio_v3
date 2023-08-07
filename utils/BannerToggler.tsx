@@ -44,24 +44,26 @@ const BannerToggler = () => {
     return (
         <>
             <Navbar handleToggleBanner={(index) => handleToggle(index)} />
-            <Banner
-                bannerName="BIO"
-                bannerSlug="cactus-banner"
-                bannerSelected={state.showStates[0]}
-                handleToggleBanner={() => handleToggle(0)}
-            />
-            <Banner
-                bannerName="WORK"
-                bannerSlug="straw-banner"
-                bannerSelected={state.showStates[1]}
-                handleToggleBanner={() => handleToggle(1)}
-            />
-            <Banner
-                bannerName="CONTACT"
-                bannerSlug="tree-banner"
-                bannerSelected={state.showStates[2]}
-                handleToggleBanner={() => handleToggle(2)}
-            />
+            <div className="mobileSpacer">
+                <Banner
+                    bannerName="BIO"
+                    bannerSlug="cactus-banner"
+                    bannerSelected={state.showStates[0]}
+                    handleToggleBanner={() => handleToggle(0)}
+                />
+                <Banner
+                    bannerName="WORK"
+                    bannerSlug="straw-banner"
+                    bannerSelected={state.showStates[1]}
+                    handleToggleBanner={() => handleToggle(1)}
+                />
+                <Banner
+                    bannerName="CONTACT"
+                    bannerSlug="tree-banner"
+                    bannerSelected={state.showStates[2]}
+                    handleToggleBanner={() => handleToggle(2)}
+                />
+            </div>
         </>
     );
 };

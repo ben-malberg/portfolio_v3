@@ -24,12 +24,13 @@ const Banner = ({
     }
 
     const loaderDiv = {
-        width: "100%",
+        width: "100vw",
         height: 142,
-        outline: "1px dotted grey",
+        boxShadow: '0 -1px 0 rgb(100, 100, 100), 0 1px 0 rgb(100, 100, 100)',
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        fontWeight: 100,
     };
 
     const tempContent = <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
@@ -37,7 +38,7 @@ const Banner = ({
     return (
         <>
             <div className="bannerContainer" onClick={handleToggleBanner}>
-                {bannerImage ? bannerImage : <div style={loaderDiv}></div>}
+                {bannerImage ? bannerImage : <div style={loaderDiv}>LOADING</div>}
                 <span className="bannerTitle">{bannerName}</span>
             </div>
             <div className={`bannerContent ${bannerSelected ? "expanded" : null}`}>
