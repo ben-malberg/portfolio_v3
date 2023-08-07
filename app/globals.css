@@ -4,13 +4,12 @@ body {
     color: white;
     overflow-x: hidden; /* used to hide horz scroll bar on drop menus */
     margin: 0 auto;
-    max-width: 1536px;
+    max-width: 1300px;
     overflow-y: scroll;
+    font-weight: 100;
 }
 
 .navbarContainer {
-    max-width: 1536px;
-    width: auto;
     height: 5rem;
     display: flex;
     align-items: center;
@@ -30,7 +29,7 @@ body {
 
 .navbarLogoContainer {
     position: relative;
-    height: 1.5rem;
+    height: .5rem;
     width: 5rem;
     margin-left: 2rem;
     display: flex;
@@ -39,10 +38,6 @@ body {
     font-weight: 100;
     padding: 0.5rem;
     line-height: 0;
-}
-
-.navbarLogo:hover {
-    opacity: 0;
 }
 
 .navbarLogoContainer:active {
@@ -55,18 +50,24 @@ body {
     object-fit: contain;
 }
 
-.navbarLogo:active {
-    filter: invert();
+.navbarLogo:hover {
+    opacity: 0;
+}
+
+.navbarLogo ~ .navbarLogoText {
+    opacity: 0;
+}
+
+.navbarLogo:hover ~.navbarLogoText {
+    opacity: 1;
 }
 
 .navbarMenuItems {
     list-style-type: none;
-    margin: 0;
-    padding: 0 2rem 0 0;
+    padding: 0 2.5rem 0 0;
     display: flex;
     gap: 5rem;
     font-size: 0.75rem;
-    font-weight: 100;
 }
 
 .navbarMenuItems li {
@@ -191,7 +192,7 @@ body {
         line-height: 0px;
         text-align: right;
         padding: 0rem 1rem 0rem;
-        transition: 0.2s ease-in;
+        /* transition: 0.2s ease-in; */
     }
 
     .bannerImage:hover ~ .bannerTitle {
