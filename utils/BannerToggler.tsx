@@ -51,19 +51,21 @@ const BannerToggler = () => {
                     bannerSlug="cactus-banner"
                     bannerSelected={state.showStates[0]}
                     handleToggleBanner={() => handleToggle(0)}
-                    content={Bio}
+                    content={<Bio />}
                 />
                 <Banner
                     bannerName="WORK"
                     bannerSlug="straw-banner"
                     bannerSelected={state.showStates[1]}
                     handleToggleBanner={() => handleToggle(1)}
+                    content={<Bio />}
                 />
                 <Banner
                     bannerName="CONTACT"
                     bannerSlug="tree-banner"
                     bannerSelected={state.showStates[2]}
                     handleToggleBanner={() => handleToggle(2)}
+                    content={<Bio />}
                 />
             </div>
         </>

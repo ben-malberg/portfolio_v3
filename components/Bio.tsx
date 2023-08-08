@@ -25,6 +25,8 @@ const Bio = () => {
         "SQLite",
         "Python",
     ];
+    const greeting = "I strive to create beautiful, intuitive and delightful experiences."
+    const thanks = "Thank you for visiting."
 
     return (
         <div className="bioContainer">
@@ -33,9 +35,11 @@ const Bio = () => {
                 <div className="nameHeader">{bioHeader}</div>
                 <div className="subHeader">{bioSubHeader}</div>
                 <div className="stack">{bioStack.map((item)=> `${item} `)}</div>
+                <div className="greeting">{greeting}</div>
+                <div className="thanks">{thanks}</div>
             </div>
         </div>
     );
 };
 
-export default <Bio />;
+export default Bio;
