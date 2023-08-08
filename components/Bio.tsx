@@ -1,12 +1,15 @@
-import PullImage from "@/utils/PullImage";
+import PullImages from "@/utils/PullImages";
 import useSWR from "swr";
 
 const Bio = () => {
     // SWR
     // Create a function to fetch the logo data
-    const fetchLogo = async () => PullImage("my-portrait");
+    let pulledImages: string[] = [];
+    const imagesToPull = ["my-portrait", "bm-logo-white"];
+    const fetchLogo = async () => PullImages(imagesToPull);
     // Use the useSWR hook to fetch the data and handle caching
-    const { data: portrait, error } = useSWR("my-portrait", fetchLogo);
+    const { data: images, error } = useSWR(imagesToPull, fetchLogo);
+
     if (error) {
         console.error("Error fetching BM logo: ", error);
     }
@@ -25,19 +28,23 @@ const Bio = () => {
         "SQLite",
         "Python",
     ];
-    const greeting = "I strive to create beautiful, intuitive and delightful experiences."
-    const thanks = "Thank you for visiting."
+    const greeting =
+        "I strive to create beautiful, intuitive and delightful experiences. To help your business grow.";
+    const thanks = "Thank you for visiting.";
 
     return (
         <div className="bioContainer">
-            <div className="portraitImage">{portrait}</div>
+            {images !== undefined ? <div className="portraitImage">{images[0]}</div> : null}
             <div className="textContent">
                 <div className="nameHeader">{bioHeader}</div>
                 <div className="subHeader">{bioSubHeader}</div>
-                <div className="stack">{bioStack.map((item)=> `${item} `)}</div>
+                <div className="stack">
+                    {bioStack.map((item) => `${item} `)}
+                </div>
                 <div className="greeting">{greeting}</div>
                 <div className="thanks">{thanks}</div>
             </div>
+            {images !== undefined ? <div className="logoFooter">{images[1]}</div> : null}
         </div>
     );
 };
