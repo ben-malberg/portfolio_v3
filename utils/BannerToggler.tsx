@@ -4,6 +4,7 @@ import React from "react";
 import { useReducer } from "react";
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
+import Bio from "@/components/Bio";
 
 const initialState = {
     showStates: [false, false, false, false],
@@ -50,6 +51,7 @@ const BannerToggler = () => {
                     bannerSlug="cactus-banner"
                     bannerSelected={state.showStates[0]}
                     handleToggleBanner={() => handleToggle(0)}
+                    content={Bio}
                 />
                 <Banner
                     bannerName="WORK"

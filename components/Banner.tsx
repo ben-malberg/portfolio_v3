@@ -13,6 +13,7 @@ const Banner = ({
     bannerSlug,
     bannerSelected,
     handleToggleBanner,
+    content
 }: BannerProps) => {
     // SWR
     // Create a function to fetch the banner data
@@ -39,10 +40,10 @@ const Banner = ({
         <>
             <div className="bannerContainer" onClick={handleToggleBanner}>
                 {bannerImage ? bannerImage : <div style={loaderDiv}>LOADING</div>}
-                <span className="bannerTitle">{bannerName}</span>
+                {bannerImage ? <span className="bannerTitle">{bannerName}</span> : null}
             </div>
             <div className={`bannerContent ${bannerSelected ? "expanded" : null}`}>
-                {tempContent}
+                {content}
             </div>
         </>
     );
