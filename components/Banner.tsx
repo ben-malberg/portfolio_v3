@@ -52,7 +52,7 @@ const Banner: React.FC<BannerProps> = ({
                 {bannerImage ? bannerImage : <div style={loaderDiv}>LOADING</div>}
                 {bannerImage ? <span className="bannerTitle">{bannerName}</span> : null}
             </div>
-            <div className={`bannerContent ${bannerSelected ? "expanded" : ""}`}>
+            <div className={`bannerContent ${bannerSelected ? bannerName : ""}`}>
                 {content}
             </div>
         </>
