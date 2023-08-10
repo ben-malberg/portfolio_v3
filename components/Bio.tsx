@@ -9,6 +9,7 @@ const Bio = () => {
     const fetchLogo = async () => PullImages(imagesToPull);
     // Use the useSWR hook to fetch the data and handle caching
     const { data: images, error } = useSWR(imagesToPull, fetchLogo);
+    
 
     if (error) {
         console.error("Error fetching BM logo: ", error);

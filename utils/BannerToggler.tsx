@@ -5,6 +5,7 @@ import { useReducer } from "react";
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import Bio from "@/components/Bio";
+import AllProjects from "@/components/AllProjects";
 
 const initialState = {
     showStates: [false, false, false, false],
@@ -58,7 +59,7 @@ const BannerToggler = () => {
                     bannerSlug="straw-banner"
                     bannerSelected={state.showStates[1]}
                     handleToggleBanner={() => handleToggle(1)}
-                    content={<Bio />}
+                    content={"workd"}
                 />
                 <Banner
                     bannerName="CONTACT"

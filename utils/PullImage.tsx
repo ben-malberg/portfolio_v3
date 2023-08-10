@@ -10,7 +10,6 @@ const PullImage = async (imageSlug: string) => {
             src={imageObject.image}
             alt={imageObject.altImage}
             fill
-            className="navbarLogo"
         />
     ) : (
         <div>error</div>

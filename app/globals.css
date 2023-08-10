@@ -15,35 +15,10 @@ body {
     left: 0px;
     z-index: 1;
     height: 5rem;
+    margin: 0rem 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     color: #ffffff;
-}
-
-@media screen and (max-width: 599px) {
-    .navbarContainer {
-        position: sticky;
-        top: 0px;
-        left: 0px;
-        z-index: 1;
-        justify-content: center;
-    }
-
-    .navbarMenuItems li {
-        display: none;
-    }
-}
-
-.navbarLogoContainer {
-    height: 2.5rem;
-    width: 5rem;
-    margin-left: 2rem;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-weight: 100;
-    cursor: pointer;
 }
 
 .navbarLogoContainer:active .navbarLogoText {
@@ -66,28 +41,61 @@ body {
     display: none;
 }
 .navbarLogoContainer:hover .navbarLogoText {
-    display: block;
+    display: contents;
     pointer-events: none;
 }
 
-.navbarMenuItems {
-    list-style-type: none;
-    padding: 0 2rem 0 0;
-    display: flex;
-    gap: 5rem;
-    font-size: 0.75rem;
+@media screen and (max-width: 599px) {
+    .navbarContainer {
+        justify-content: center;
+    }
+
+    .navbarMenuItems {
+        display: none;
+    }
+
+    .navbarLogoContainer {
+        cursor: pointer;
+        height: 2.5rem;
+        width: 5rem;
+        display: flex;
+        align-items: center;
+    }
 }
 
-.navbarMenuItems li {
-    transition: 0.2s ease-in-out;
-    cursor: none;
-}
+@media screen and (min-width: 600px) {
+    .navbarContainer {
+        justify-content: space-between;
+    }
 
-.navbarMenuItems li:hover {
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    transition: 0.2s ease-in-out;
+    .navbarLogoContainer {
+        height: 2.5rem;
+        width: 5rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-weight: 100;
+        cursor: pointer;
+    }
+
+    .navbarMenuItems {
+        list-style-type: none;
+        display: flex;
+        gap: 5rem;
+        font-size: 0.75rem;
+    }
+
+    .navbarMenuItems li {
+        transition: 0.2s ease-in-out;
+        cursor: none;
+    }
+
+    .navbarMenuItems li:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        transition: 0.2s ease-in-out;
+    }
 }
 
 .imagesContainer {
@@ -159,6 +167,15 @@ body {
 }
 
 @media screen and (min-width: 600px) {
+    .bannerContainer {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        transition: 0.4s ease-in-out;
+        box-shadow: 0 -1px 0 rgb(0, 0, 0), 0 1px 0 rgb(0, 0, 0);
+    }
+
     .bannerImage {
         object-fit: cover;
         filter: brightness(0.5);
@@ -173,15 +190,6 @@ body {
 
     .bannerImage:active {
         filter: invert();
-    }
-
-    .bannerContainer {
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-        transition: 0.4s ease-in-out;
-        box-shadow: 0 -1px 0 rgb(0, 0, 0), 0 1px 0 rgb(0, 0, 0);
     }
 
     .bannerTitle {
@@ -212,6 +220,10 @@ body {
         line-height: 200px;
         transition: 0.2s ease-out;
     }
+
+    .bannerContent.expanded {
+        height: 60rem;
+    }
 }
 @media screen and (max-width: 599px) {
     .bannerContainer {
@@ -221,6 +233,8 @@ body {
     }
 
     .bannerImage {
+        width: 100%;
+        object-fit: cover;
         filter: brightness(0.65);
     }
 
@@ -243,8 +257,11 @@ body {
         pointer-events: none;
     }
 
+    .bannerContent.expanded {
+        height: 65rem;
+    }
+
     .mobileSpacer {
-        width: 100%;
         max-width: 599px;
         display: flex;
         flex-direction: column;
@@ -259,10 +276,8 @@ body {
 }
 
 .bannerContent.expanded {
-    height: auto;
     color: white;
     transition: 0.25s ease-out;
-    /* display:block; */
 }
 
 .bioContainer {
@@ -306,7 +321,7 @@ body {
 }
 
 .subHeader {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     font-size: 2rem;
 }
 

@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const PullImages = async (imageArray: string[]) => {
     const selectedImages = await getImages();
+    console.log("from the GROQ call:", selectedImages);
 
     const matchedImages = imageArray.map((slugName) => {
         return selectedImages.filter(
