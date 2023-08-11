@@ -9,7 +9,7 @@ export const raleway = Raleway({
 
 export const metadata: Metadata = {
     title: "Ben Malberg Portfolio",
-    description: "Ben Malberg - Frontend Developer | Artist",
+    description: "Ben Malberg - Frontend Engineer | Artist",
 };
 
 export default function RootLayout({

@@ -2,6 +2,7 @@ import { getProjects } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import useSWR from "swr";
+import { HiMiniArrowUpRight } from 'react-icons/hi2';
 
 const Work = () => {
     type projects = string[] | undefined;
@@ -29,10 +30,10 @@ const Work = () => {
     return (
         <div className="workContainer">
             {projects !== undefined &&
-                projects.map((project) => {
+                projects.map((project, idx) => {
                     return (
-                        <div className="workContent" key={project._id}>
-                            <div className="workTitleAndImage">
+                        <div className="workProject" key={project._id}>
+                            <div className={idx % projects.length ? 'workTitleAndImage1' : 'workTitleAndImage0'}>
                                 <div className="workTitle">{project.name}</div>
                                 <div className="workImageContainer">
                                     <Image
@@ -59,6 +60,10 @@ const Work = () => {
                                     <PortableText value={project.content} />
                                 </div>
                             </div>
+                            <div className="workLinks">
+                                <a href={project.url} target="_blank" rel="noopener noreferrer" className="workLink">SITE LINK {<HiMiniArrowUpRight />}</a>
+                            </div>
+                            <hr style={{width: "100%"}}/>
                         </div>
                     );
                 })}
