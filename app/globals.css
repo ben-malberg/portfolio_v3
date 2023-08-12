@@ -45,7 +45,7 @@ body {
     pointer-events: none;
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (width <= 690px) {
     .navbarContainer {
         justify-content: center;
     }
@@ -63,7 +63,7 @@ body {
     }
 }
 
-@media screen and (width >= 691px) {
+@media screen and (width > 690px) {
     .navbarContainer {
         justify-content: space-between;
     }
@@ -225,7 +225,7 @@ body {
     }
 
     .bannerContent.WORK {
-        height: 218rem;
+        height: 206.5rem;
         transition: 0.25s ease-out;
     }
 
@@ -355,6 +355,7 @@ body {
 
 .workTitleAndImage:hover .workTitle {
     cursor: default;
+    pointer-events: none;
 }
 
 .workImageContainer {
@@ -365,12 +366,14 @@ body {
 
 .workImageStyle {
     object-fit: contain;
+    pointer-events: none;
 }
 
 .workExcerpt {
     text-align: center;
     text-wrap: balance;
     font-weight: 200;
+    pointer-events: none;
 }
 
 .workMobileImageAndDescription {
@@ -381,16 +384,9 @@ body {
     /* border: 1px solid yellow; */
 }
 
-@media screen and (width <= 530px) {
-    .workTitleAndImage {
-        height: 25rem;
-    }
-}
-
-@media screen and (530px < width <= 690px) {
-    .workTitleAndImage {
-        height: 30rem;
-    }
+.workHorzBreak {
+    width: 100vw;
+    border-top: 1px dotted white;
 }
 
 @media screen and (width <= 690px) {
@@ -419,12 +415,12 @@ body {
 
     .workExcerpt {
         margin-top: 1rem;
-        font-size: 4vw;
-        max-width: 75%;
+        font-size: 4.5vw;
+        max-width: 85%;
     }
 
     .workMobileImageAndDescription {
-        margin-top: 2rem;
+        margin-top: 1rem;
         width: auto;
         flex-direction: column;
         align-items: center;
@@ -449,12 +445,13 @@ body {
     }
 
     .workContentContainer {
-        width: 60%;
+        margin-top: -1rem;
+        width: 70%;
         text-align: center;
     }
 
     .workLinks {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         margin-bottom: 3rem;
         width: 100%;
         text-align: center;
@@ -508,6 +505,7 @@ body {
         width: 20rem;
         text-align: right;
         margin-right: -17rem;
+        pointer-events: none;
     }
 
     .workTitleAndImage1 .workTitle {
@@ -518,6 +516,7 @@ body {
         width: 20rem;
         text-align: right;
         margin-left: -17rem;
+        pointer-events: none;
     }
 
     .workTitleAndImage0:hover {
@@ -590,13 +589,10 @@ body {
     .workLinks {
         margin-top: 2rem;
         margin-bottom: 3rem;
-        width: 100%;
+        width: 70%;
         text-align: right;
         font-size: 1.25rem;
         font-weight: 600;
-    }
-
-    .workLinks:last-of-type {
     }
 
     .workLink {

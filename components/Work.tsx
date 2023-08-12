@@ -63,7 +63,7 @@ const Work = () => {
                             <div className="workLinks">
                                 <a href={project.url} target="_blank" rel="noopener noreferrer" className="workLink">SITE LINK {<HiMiniArrowUpRight />}</a>
                             </div>
-                            <hr style={{width: "100%"}}/>
+                            <div className="workHorzBreak"></div>
                         </div>
                     );
                 })}
