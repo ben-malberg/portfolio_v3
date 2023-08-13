@@ -184,7 +184,7 @@ body {
 
     .bannerContent.WORK {
         height: 162rem;
-        transition: 0.25s ease-out;
+        transition: 1s ease-out;
     }
 }
 @media screen and (max-width: 690px) {
@@ -224,9 +224,59 @@ body {
         transition: 0.25s ease-out;
     }
 
-    .bannerContent.WORK {
-        height: 206.5rem;
-        transition: 0.25s ease-out;
+    @media screen and (width <= 690px) {
+        .bannerContent.WORK {
+            height: 201rem;
+            transition: 1s ease-out;
+        }
+    }
+
+    @media screen and (width <= 655px) {
+        .bannerContent.WORK {
+            height: 203rem;
+            transition: 1s ease-out;
+        }
+    }
+
+    @media screen and (width <= 615px) {
+        .bannerContent.WORK {
+            height: 207rem;
+            transition: 1s ease-out;
+        }
+    }
+
+    @media screen and (width <= 570px) {
+        .bannerContent.WORK {
+            height: 212rem;
+            transition: 1s ease-out;
+        }
+    }
+
+    @media screen and (width <= 520px) {
+        .bannerContent.WORK {
+            height: 217rem;
+            transition: 1s ease-out;
+        }
+    }
+    
+    @media screen and (width <= 500px) {
+        .bannerContent.WORK {
+            height: 221rem;
+            transition: 1s ease-out;
+        }
+
+    }
+    @media screen and (width <= 400px) {
+        .bannerContent.WORK {
+            height: 216rem;
+            transition: 1s ease-out;
+        }
+    }
+    @media screen and (width <= 350px) {
+        .bannerContent.WORK {
+            height: 214rem;
+            transition: 1s ease-out;
+        }
     }
 
     .mobileSpacer {
@@ -326,14 +376,14 @@ body {
 .workContainer {
     /* border: 1px solid burlywood; */
     gap: 1rem;
-    padding: 1rem;
-    padding-top: 3rem;
+    padding: 3rem 1rem 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .workProject {
+    width: 100%;
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
@@ -345,7 +395,15 @@ body {
     text-transform: uppercase;
 }
 
-.workTitleAndImage {
+.workTitleAndImage0 {
+    /* border: 1px solid purple; */
+    width: 80vw;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.workTitleAndImage1 {
     /* border: 1px solid purple; */
     width: 80vw;
     display: flex;
@@ -387,11 +445,12 @@ body {
 .workHorzBreak {
     width: 100vw;
     border-top: 1px dotted white;
+    margin: 1rem;
 }
 
 @media screen and (width <= 690px) {
     .workProject {
-        margin-top: 0rem;
+        margin-top: 2rem;
     }
 
     .workContainer {
@@ -403,14 +462,38 @@ body {
     .workImageContainer {
         position: relative;
         max-width: 100%;
-        height: 100%;
+        height: 15rem;
         /* border: 1px solid orange; */
     }
 
+    .workImageStyle {
+        object-fit: contain;
+        pointer-events: none;
+    }
+
+    .workTitleAndImage0 {
+        /* border: 1px solid purple; */
+        width: 80vw;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .workTitleAndImage1 {
+        /* border: 1px solid purple; */
+        width: 80vw;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
     .workTitle {
-        margin-top: 1rem;
-        font-size: 26vw;
+        z-index: 1;
+        margin-top: -3.5rem;
+        font-size: 24vw;
         text-align: center;
+        text-shadow: 0px 4px 5px black;
     }
 
     .workExcerpt {
@@ -420,7 +503,7 @@ body {
     }
 
     .workMobileImageAndDescription {
-        margin-top: 1rem;
+        margin: 3rem 1rem 0rem 1rem;
         width: auto;
         flex-direction: column;
         align-items: center;
@@ -428,15 +511,15 @@ body {
     }
 
     .workMobileImageOuterContainer {
-        padding-top: 2rem;
-        height: 40rem;
+        height: 30rem;
         width: 100%;
+        min-width: 18rem;
         /* border: 1px solid blueviolet; */
     }
 
     .workMobileImageContainer {
         position: relative;
-        height: 95%;
+        height: 100%;
         width: 100%;
     }
 
@@ -445,14 +528,15 @@ body {
     }
 
     .workContentContainer {
-        margin-top: -1rem;
+        margin-top: 1rem;
         width: 70%;
+        min-width: 15rem;
         text-align: center;
     }
 
     .workLinks {
         margin-top: 1.5rem;
-        margin-bottom: 3rem;
+        margin-bottom: 0rem;
         width: 100%;
         text-align: center;
         font-size: 1.25rem;
@@ -486,6 +570,8 @@ body {
         display: flex;
         flex-direction: row;
         align-items: center;
+        container-type: inline-size;
+        pointer-events: none;
     }
 
     .workTitleAndImage1 {
@@ -495,6 +581,8 @@ body {
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
+        container-type: inline-size;
+        pointer-events: none;
     }
 
     .workTitleAndImage0 .workTitle {
@@ -528,8 +616,9 @@ body {
     }
 
     .workTitleAndImage0:hover .workTitle {
+        /* border: 1px solid green; */
+        font-size: 28cqw;
         text-align: center;
-        font-size: 22vw;
         width: 100%;
         cursor: default;
     }
@@ -539,8 +628,9 @@ body {
     }
 
     .workTitleAndImage1:hover .workTitle {
+        /* border: 1px solid green; */
+        font-size: 28cqw;
         text-align: center;
-        font-size: 19vw;
         width: 100%;
         cursor: default;
     }
@@ -587,9 +677,10 @@ body {
     }
 
     .workLinks {
+        width: 100%;
+        /* border: 1px solid blue; */
         margin-top: 2rem;
-        margin-bottom: 3rem;
-        width: 70%;
+        /* margin-bottom: 3rem; */
         text-align: right;
         font-size: 1.25rem;
         font-weight: 600;

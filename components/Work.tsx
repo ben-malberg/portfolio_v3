@@ -63,7 +63,7 @@ const Work = () => {
                             <div className="workLinks">
                                 <a href={project.url} target="_blank" rel="noopener noreferrer" className="workLink">SITE LINK {<HiMiniArrowUpRight />}</a>
                             </div>
-                            <div className="workHorzBreak"></div>
+                            {idx < projects.length - 1 && <div className="workHorzBreak"></div>}
                         </div>
                     );
                 })}
