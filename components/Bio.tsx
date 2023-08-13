@@ -30,7 +30,7 @@ const Bio = () => {
         "Python",
     ];
     const greeting =
-        "I strive to create beautiful, intuitive & wonderful experiences. Let's make this world a place worth remembering.";
+        "I strive to create aesthetic, intuitive & wonderful experiences. Let's make this world a place worth remembering.";
     const thanks = "Thank you for visiting.";
 
     return (
