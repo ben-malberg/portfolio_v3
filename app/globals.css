@@ -226,28 +226,28 @@ body {
 
     @media screen and (width <= 690px) {
         .bannerContent.WORK {
-            height: 201rem;
+            height: 205rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 655px) {
         .bannerContent.WORK {
-            height: 203rem;
+            height: 207rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 615px) {
         .bannerContent.WORK {
-            height: 207rem;
+            height: 209rem;
             transition: 1s ease-out;
         }
     }
 
-    @media screen and (width <= 570px) {
+    @media screen and (width <= 600px) {
         .bannerContent.WORK {
-            height: 212rem;
+            height: 214rem;
             transition: 1s ease-out;
         }
     }
