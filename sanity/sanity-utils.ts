@@ -1,6 +1,7 @@
 import { createClient, groq } from "next-sanity";
 import { ImageLib } from "@/types/ImageLib";
 import { Project } from "@/types/Project";
+import { Resume } from "@/types/Resume";
 
 const client = createClient({
     projectId: "kdtje5p1",
@@ -50,5 +51,15 @@ export async function getImage(imageSlug: string): Promise<ImageLib> {
             altImage,
         }`,
         { imageSlug }
+    );
+}
+
+export async function downloadResume(): Promise<Resume[]> {
+    return client.fetch(
+        groq`*[_type == 'resume'] {
+            _id,
+            title,
+            "resumeURL": resume.asset->url
+        }`
     );
 }

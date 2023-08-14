@@ -17,7 +17,7 @@ const Work = () => {
         isLoading,
     } = useSWR("getProjects", fetchedProjects);
 
-    console.log(projects ? projects : "");
+    // console.log(projects ? projects : "");
 
     if (error) {
         console.error("Error fetching projects: ", error);

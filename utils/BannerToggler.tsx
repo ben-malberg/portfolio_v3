@@ -6,7 +6,8 @@ import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import Bio from "@/components/Bio";
 import Work from "@/components/Work";
-import AllProjects from "@/components/AllProjects";
+import Contact from "@/components/Contact";
+// import AllProjects from "@/components/AllProjects";
 
 const initialState = {
     showStates: [false, false, false, false],
@@ -67,7 +68,7 @@ const BannerToggler = () => {
                     bannerSlug="tree-banner"
                     bannerSelected={state.showStates[2]}
                     handleToggleBanner={() => handleToggle(2)}
-                    content={<Bio />}
+                    content={<Contact />}
                 />
             </div>
         </>
