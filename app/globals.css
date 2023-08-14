@@ -79,17 +79,18 @@ body {
     }
 
     .navbarMenuItems {
+        /* border: 1px solid red; */
         list-style-type: none;
         display: flex;
         gap: 5rem;
         font-size: 0.75rem;
-        padding: 0 .5rem;
+        padding: 0 0.5rem;
     }
 
     .navbarMenuItems li {
         transition: 0.2s ease-in-out;
         cursor: none;
-        padding: 0 .25rem;
+        padding: 0 0.25rem;
     }
 
     .navbarMenuItems li:hover {
@@ -190,11 +191,12 @@ body {
     }
 
     .bannerContent.CONTACT {
-        height: 5rem;
-        transition: 1s ease-out;
+        /* border: 1px solid peachpuff; */
+        height: 19rem;
+        transition: 0.15s ease-out;
     }
 }
-@media screen and (max-width: 690px) {
+@media screen and (width <= 690px) {
     .bannerContainer {
         display: flex;
         justify-content: center;
@@ -231,11 +233,14 @@ body {
         transition: 0.25s ease-out;
     }
 
-    @media screen and (width <= 690px) {
-        .bannerContent.WORK {
-            height: 207rem;
-            transition: 1s ease-out;
-        }
+    .bannerContent.WORK {
+        height: 207rem;
+        transition: 1s ease-out;
+    }
+
+    .bannerContent.CONTACT {
+        height: 19rem;
+        transition: 0.15s ease-out;
     }
 
     @media screen and (width <= 655px) {
@@ -272,13 +277,12 @@ body {
             transition: 1s ease-out;
         }
     }
-    
+
     @media screen and (width <= 500px) {
         .bannerContent.WORK {
             height: 219rem;
             transition: 1s ease-out;
         }
-
     }
     @media screen and (width <= 400px) {
         .bannerContent.WORK {
@@ -311,7 +315,7 @@ body {
 
 .bannerContent {
     height: 0rem;
-    transition: 0.25s ease-out;
+    transition: 0.15s ease-out;
     overflow: hidden;
 }
 
@@ -721,4 +725,68 @@ body {
         background-color: white;
         color: black;
     }
+}
+
+.contactContainer {
+    border: 1px solid purple;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    gap: 4rem;
+}
+
+.contactContactInfo {
+    display: flex;
+    /* border: 1px solid yellow; */
+    width: 100%;
+    padding-right: 2.5rem;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contactAddress {
+    /* border: 1px solid red; */
+    width: 50%;
+    max-height: 100%;
+    font-size: 1rem;
+    text-align: right;
+    /* padding-top: 1.7rem; */
+    /* line-height: 1.8rem; */
+}
+
+.contactLinkItems {
+    width: 50%;
+    margin: -2px;
+    padding-left: 0px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    font-weight: 300;
+    gap: 0.5rem;
+    /* border: 1px solid blue; */
+}
+
+.contactLink {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.contactLink:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: 0.2s ease-in-out;
+}
+
+.contactLogo {
+    /* border: 1px solid blue; */
+    position: relative;
+    height: 3rem;
+    width: 6rem;
 }

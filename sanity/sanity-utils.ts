@@ -6,7 +6,7 @@ import { Resume } from "@/types/Resume";
 const client = createClient({
     projectId: "kdtje5p1",
     dataset: "production",
-    apiVersion: "2023-07-26",
+    apiVersion: "2023-08-14",
 });
 
 export async function getProjects(): Promise<Project[]> {
