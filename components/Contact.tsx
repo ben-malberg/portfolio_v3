@@ -22,7 +22,11 @@ const Contact: React.FC = () => {
     // Create a function to fetch the logo data
     const fetchLogo = async () => PullImage("bm-logo-reverse-white");
     // Use the useSWR hook to fetch the data and handle caching
-    const { data: logo, error: error2, isLoading: isLoading2 } = useSWR("bm-logo-reverse-white", fetchLogo);
+    const {
+        data: logo,
+        error: error2,
+        isLoading: isLoading2,
+    } = useSWR("bm-logo-reverse-white", fetchLogo);
     if (error2) {
         console.error("Error fetching BM logo: ", error2);
     } else if (!isLoading2) {
@@ -33,9 +37,6 @@ const Contact: React.FC = () => {
         <>
             <div className="contactContainer">
                 <div className="contactContactInfo">
-                    <div className="contactAddress">
-                        BAY AREA CALIFORNIA USA
-                    </div>
                     <ul className="contactLinkItems">
                         {isLoading1 ? (
                             <li>LOADING RESUME</li>
@@ -80,7 +81,10 @@ const Contact: React.FC = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="contactLogo">{logo}</div>
+                <div className="contactLogoContainer">
+                    <div className="contactAddress">BEN MALBERG - BAY AREA CALIFORNIA USA</div>
+                    <div className="contactLogo">{logo}</div>
+                </div>
             </div>
         </>
     );
