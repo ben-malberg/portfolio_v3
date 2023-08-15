@@ -3,6 +3,7 @@
 import React from "react";
 import { useReducer } from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
 import Bio from "@/components/Bio";
 import Work from "@/components/Work";
@@ -71,6 +72,7 @@ const BannerToggler = () => {
                     content={<Contact />}
                 />
             </div>
+            <Footer handleToggleBanner={(index) => handleToggle(index)}/>
         </>
     );
 };

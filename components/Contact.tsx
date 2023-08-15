@@ -18,20 +18,20 @@ const Contact: React.FC = () => {
         return <>{`Error fetching resume from SWR: ", ${error1}`}</>;
     }
 
-    // SWR
-    // Create a function to fetch the logo data
-    const fetchLogo = async () => PullImage("bm-logo-reverse-white");
-    // Use the useSWR hook to fetch the data and handle caching
-    const {
-        data: logo,
-        error: error2,
-        isLoading: isLoading2,
-    } = useSWR("bm-logo-reverse-white", fetchLogo);
-    if (error2) {
-        console.error("Error fetching BM logo: ", error2);
-    } else if (!isLoading2) {
-        console.log("logo: ", logo);
-    }
+    // // SWR
+    // // Create a function to fetch the logo data
+    // const fetchLogo = async () => PullImage("bm-logo-reverse-white");
+    // // Use the useSWR hook to fetch the data and handle caching
+    // const {
+    //     data: logo,
+    //     error: error2,
+    //     isLoading: isLoading2,
+    // } = useSWR("bm-logo-reverse-white", fetchLogo);
+    // if (error2) {
+    //     console.error("Error fetching BM logo: ", error2);
+    // } else if (!isLoading2) {
+    //     console.log("logo: ", logo);
+    // }
 
     return (
         <>
@@ -81,10 +81,10 @@ const Contact: React.FC = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="contactLogoContainer">
+                {/* <div className="contactLogoContainer">
                     <div className="contactAddress">BEN MALBERG - BAY AREA CALIFORNIA USA</div>
                     <div className="contactLogo">{logo}</div>
-                </div>
+                </div> */}
             </div>
         </>
     );
