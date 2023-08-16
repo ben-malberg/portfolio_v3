@@ -18,21 +18,6 @@ const Contact: React.FC = () => {
         return <>{`Error fetching resume from SWR: ", ${error1}`}</>;
     }
 
-    // // SWR
-    // // Create a function to fetch the logo data
-    // const fetchLogo = async () => PullImage("bm-logo-reverse-white");
-    // // Use the useSWR hook to fetch the data and handle caching
-    // const {
-    //     data: logo,
-    //     error: error2,
-    //     isLoading: isLoading2,
-    // } = useSWR("bm-logo-reverse-white", fetchLogo);
-    // if (error2) {
-    //     console.error("Error fetching BM logo: ", error2);
-    // } else if (!isLoading2) {
-    //     console.log("logo: ", logo);
-    // }
-
     return (
         <>
             <div className="contactContainer">
@@ -57,6 +42,17 @@ const Contact: React.FC = () => {
                         ) : (
                             <li>RESUME UNAVAILABLE</li>
                         )}
+                        <li>
+                            <a
+                                className="contactLink"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://github.com/thejourneyville"
+                            >
+                                GITHUB
+                            </a>
+                            <HiMiniArrowUpRight />
+                        </li>
                         <li>
                             <a
                                 className="contactLink"

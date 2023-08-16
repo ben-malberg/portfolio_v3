@@ -12,19 +12,17 @@ const Footer = ({ handleToggleBanner }: BannerProps) => {
     // Use the useSWR hook to fetch the data and handle caching
     const {
         data: logo,
-        error: error2,
-        isLoading: isLoading2,
+        error,
+        isLoading,
     } = useSWR("bm-logo-reverse-white", fetchLogo);
-    if (error2) {
-        console.error("Error fetching BM logo: ", error2);
-    } else if (!isLoading2) {
-        console.log("logo: ", logo);
+    if (error) {
+        console.error("Error fetching BM logo: ", error);
     }
 
     return (
         <div className="footerContainer">
-            <div className="footerAddress">
-                BAY AREA CA USA
+            <div className="footerAddress" onClick={() => handleToggleBanner(2)}>
+                {`BEN MALBERG 2023`}
             </div>
             <div className="footerLogo" onClick={() => handleToggleBanner(3)}>
                 {logo}
