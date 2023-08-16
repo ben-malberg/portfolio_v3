@@ -238,12 +238,12 @@ body {
     }
 
     .bannerContent.BIO {
-        height: 63rem;
+        height: 65rem;
         transition: 0.25s ease-out;
     }
 
     .bannerContent.WORK {
-        height: 207rem;
+        height: 208rem;
         transition: 1s ease-out;
     }
 
@@ -254,62 +254,62 @@ body {
 
     @media screen and (width <= 655px) {
         .bannerContent.WORK {
-            height: 209rem;
+            height: 210rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 615px) {
         .bannerContent.WORK {
-            height: 209rem;
+            height: 210rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 600px) {
         .bannerContent.WORK {
-            height: 210rem;
+            height: 211rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 550px) {
         .bannerContent.WORK {
-            height: 214rem;
+            height: 215rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 520px) {
         .bannerContent.WORK {
-            height: 217rem;
+            height: 218rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 500px) {
         .bannerContent.WORK {
-            height: 219rem;
+            height: 220rem;
             transition: 1s ease-out;
         }
     }
     @media screen and (width <= 400px) {
         .bannerContent.WORK {
-            height: 225rem;
+            height: 226rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 450px) {
         .bannerContent.WORK {
-            height: 225rem;
+            height: 229rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 350px) {
         .bannerContent.WORK {
-            height: 224rem;
+            height: 227rem;
             transition: 1s ease-out;
         }
     }
