@@ -37,12 +37,25 @@ body {
     display: none;
 }
 
-.navbarLogoContainer:hover .navbarLogo {
-    display: none;
+@media screen and (width > 450px) {
+    .navbarLogoContainer:hover .navbarLogo {
+        display: none;
+    }
+    .navbarLogoContainer:hover .navbarLogoText {
+        display: contents;
+        pointer-events: none;
+    }
 }
-.navbarLogoContainer:hover .navbarLogoText {
-    display: contents;
-    pointer-events: none;
+
+@media screen and (width <= 450px) {
+    .navbarLogoContainer:active .navbarLogo {
+        display: none;
+    }
+    .navbarLogoContainer:active .navbarLogoText {
+        display: contents;
+        pointer-events: none;
+        color: white;
+    }
 }
 
 @media screen and (width <= 690px) {
@@ -71,6 +84,7 @@ body {
     .navbarLogoContainer {
         height: 2.5rem;
         width: 5rem;
+        padding: 0 0.25rem;
         display: flex;
         align-items: center;
         text-align: center;
@@ -84,7 +98,7 @@ body {
         display: flex;
         gap: 5rem;
         font-size: 0.75rem;
-        padding: 0 0.5rem;
+        padding: 0 0.25rem;
     }
 
     .navbarMenuItems li {
@@ -100,24 +114,6 @@ body {
         transition: 0.2s ease-in-out;
     }
 }
-
-/* .imagesContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-/* .webImageContainer {
-    position: relative;
-    height: 25rem;
-    width: 50%;
-}
-
-.mobileImageContainer {
-    position: relative;
-    height: 5rem;
-    width: 50%;
-} */
 
 .imageStyle {
     object-fit: contain;
@@ -214,6 +210,7 @@ body {
 
     .bannerImage {
         width: 100%;
+        height: 142px;
         object-fit: cover;
         filter: brightness(0.65);
     }
@@ -252,50 +249,57 @@ body {
         transition: 0.15s ease-out;
     }
 
-    @media screen and (width <= 655px) {
+    @media screen and (width <= 690px) {
         .bannerContent.WORK {
             height: 210rem;
             transition: 1s ease-out;
         }
     }
 
-    @media screen and (width <= 615px) {
+    /* @media screen and (width <= 655px) {
         .bannerContent.WORK {
             height: 210rem;
+            transition: 1s ease-out;
+        }
+    } */
+
+    @media screen and (width <= 615px) {
+        .bannerContent.WORK {
+            height: 213rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 600px) {
         .bannerContent.WORK {
-            height: 211rem;
+            height: 217rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 550px) {
         .bannerContent.WORK {
-            height: 215rem;
+            height: 219rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 520px) {
         .bannerContent.WORK {
-            height: 218rem;
+            height: 220rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 500px) {
         .bannerContent.WORK {
-            height: 220rem;
+            height: 222rem;
             transition: 1s ease-out;
         }
     }
     @media screen and (width <= 400px) {
         .bannerContent.WORK {
-            height: 226rem;
+            height: 228rem;
             transition: 1s ease-out;
         }
     }
@@ -319,7 +323,7 @@ body {
         display: flex;
         flex-direction: column;
     }
- }
+}
 
 .bannerContent {
     /* margin-bottom: 2px; */
@@ -692,7 +696,7 @@ body {
         padding-top: 2rem;
         flex: 1;
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         /* border: 1px solid blueviolet; */
     }
 
@@ -742,7 +746,7 @@ body {
     flex-direction: column;
     padding-top: 3rem;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     height: 100%;
     gap: 4rem;
 }
@@ -784,43 +788,58 @@ body {
 .footerContainer {
     /* background: rgb(109, 83, 83); */
     height: auto;
-    padding: .5rem 0rem .5rem .25rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #ffffff;
-    border-top:1px dotted rgb(133, 133, 133);
-    border-bottom:1px dotted rgb(133, 133, 133);
+    border-top: 1px dotted rgb(133, 133, 133);
+    border-bottom: 1px dotted rgb(133, 133, 133);
 }
 
 .footerAddress {
-    font-size: .75rem;
-    padding: 0 .5rem 0 0;
+    font-size: 0.75rem;
+    padding: 0 0.25rem;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 
-.footerAddress:hover {
-    background-color: white;
-    color: black;
-    transition: 0.2s ease-in-out;
+@media screen and (width > 450px) {
+    .footerAddress:hover {
+        background-color: white;
+        color: black;
+        transition: 0.2s ease-in-out;
+    }
+
+    .footerLogo:hover {
+        cursor: pointer;
+        filter: blur(0.15rem);
+        transition: 0.1s ease-in-out;
+    }
+
+    .footerLogo:active {
+        filter: invert();
+    }
+}
+
+@media screen and (width <= 450px) {
+    .footerAddress:active {
+        background-color: white;
+        color: black;
+        transition: 0.2s ease-in-out;
+    }
+
+    .footerLogo:active {
+        cursor: pointer;
+        filter: blur(0.15rem);
+        transition: 0.1s ease-in-out;
+    }
 }
 
 .footerLogo {
     position: relative;
     height: 2.5rem;
     width: 5rem;
-    margin-bottom: .2rem;
+    margin: 0 0.25rem;
     transition: 0.1s ease-in-out;
 }
-
-.footerLogo:hover {
-    cursor: pointer;
-    filter:blur(.15rem);
-    transition: 0.1s ease-in-out;
-}
-
-.footerLogo:active {
-    filter:invert();
-}
-
