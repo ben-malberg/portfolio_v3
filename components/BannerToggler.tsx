@@ -55,6 +55,7 @@ const BannerToggler = () => {
                     bannerSelected={state.showStates[0]}
                     handleToggleBanner={() => handleToggle(0)}
                     content={<Bio />}
+                    loader={true}
                 />
                 <Banner
                     bannerName="WORK"
@@ -62,6 +63,7 @@ const BannerToggler = () => {
                     bannerSelected={state.showStates[1]}
                     handleToggleBanner={() => handleToggle(1)}
                     content={<Work />}
+                    loader={false}
                 />
                 <Banner
                     bannerName="CONTACT"
@@ -69,6 +71,7 @@ const BannerToggler = () => {
                     bannerSelected={state.showStates[2]}
                     handleToggleBanner={() => handleToggle(2)}
                     content={<Contact />}
+                    loader={false}
                 />
             </div>
             <Footer handleToggleBanner={(index) => handleToggle(index)} />
