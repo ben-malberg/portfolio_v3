@@ -20,6 +20,7 @@ const Footer = ({ handleToggleBanner }: BannerProps) => {
     }
 
     return (
+        !isLoading &&
         <div className="footerContainer">
             <div className="footerAddress" onClick={() => handleToggleBanner(2)}>
                 {`BEN MALBERG 2023`}

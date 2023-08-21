@@ -77,10 +77,6 @@ const Contact: React.FC = () => {
                         </li>
                     </ul>
                 </div>
-                {/* <div className="contactLogoContainer">
-                    <div className="contactAddress">BEN MALBERG - BAY AREA CALIFORNIA USA</div>
-                    <div className="contactLogo">{logo}</div>
-                </div> */}
             </div>
         </>
     );

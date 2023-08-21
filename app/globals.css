@@ -9,6 +9,20 @@ body {
     font-weight: 100;
 }
 
+.loaderDiv {
+    z-index: 1;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    max-width: 1000px;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12rem;
+    color: rgb(255, 255, 255);
+}
+
 .navbarContainer {
     position: sticky;
     top: 0px;
@@ -37,12 +51,25 @@ body {
     display: none;
 }
 
-.navbarLogoContainer:hover .navbarLogo {
-    display: none;
+@media (hover: hover) {
+    .navbarLogoContainer:hover .navbarLogo {
+        display: none;
+    }
+    .navbarLogoContainer:hover .navbarLogoText {
+        display: contents;
+        pointer-events: none;
+    }
 }
-.navbarLogoContainer:hover .navbarLogoText {
-    display: contents;
-    pointer-events: none;
+
+@media (hover: none) {
+    .navbarLogoContainer:active .navbarLogo {
+        display: none;
+    }
+    .navbarLogoContainer:active .navbarLogoText {
+        display: contents;
+        pointer-events: none;
+        color: white;
+    }
 }
 
 @media screen and (width <= 690px) {
@@ -71,6 +98,7 @@ body {
     .navbarLogoContainer {
         height: 2.5rem;
         width: 5rem;
+        padding: 0 0.25rem;
         display: flex;
         align-items: center;
         text-align: center;
@@ -84,7 +112,7 @@ body {
         display: flex;
         gap: 5rem;
         font-size: 0.75rem;
-        padding: 0 0.5rem;
+        padding: 0 0.25rem;
     }
 
     .navbarMenuItems li {
@@ -101,24 +129,6 @@ body {
     }
 }
 
-/* .imagesContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-/* .webImageContainer {
-    position: relative;
-    height: 25rem;
-    width: 50%;
-}
-
-.mobileImageContainer {
-    position: relative;
-    height: 5rem;
-    width: 50%;
-} */
-
 .imageStyle {
     object-fit: contain;
 }
@@ -132,8 +142,6 @@ body {
         align-items: center;
         position: relative;
         overflow: hidden;
-        /* transition: 0.4s ease-in-out; */
-        /* box-shadow: 0 -1px 0 rgb(0, 0, 0), 0 1px 0 rgb(0, 0, 0); */
     }
 
     .bannerContainer:nth-last-of-type(2) {
@@ -214,6 +222,7 @@ body {
 
     .bannerImage {
         width: 100%;
+        height: 142px;
         object-fit: cover;
         filter: brightness(0.65);
     }
@@ -238,12 +247,12 @@ body {
     }
 
     .bannerContent.BIO {
-        height: 63rem;
+        height: 65rem;
         transition: 0.25s ease-out;
     }
 
     .bannerContent.WORK {
-        height: 207rem;
+        height: 208rem;
         transition: 1s ease-out;
     }
 
@@ -252,64 +261,71 @@ body {
         transition: 0.15s ease-out;
     }
 
-    @media screen and (width <= 655px) {
-        .bannerContent.WORK {
-            height: 209rem;
-            transition: 1s ease-out;
-        }
-    }
-
-    @media screen and (width <= 615px) {
-        .bannerContent.WORK {
-            height: 209rem;
-            transition: 1s ease-out;
-        }
-    }
-
-    @media screen and (width <= 600px) {
+    @media screen and (width <= 690px) {
         .bannerContent.WORK {
             height: 210rem;
             transition: 1s ease-out;
         }
     }
 
-    @media screen and (width <= 550px) {
+    /* @media screen and (width <= 655px) {
         .bannerContent.WORK {
-            height: 214rem;
+            height: 210rem;
+            transition: 1s ease-out;
+        }
+    } */
+
+    @media screen and (width <= 615px) {
+        .bannerContent.WORK {
+            height: 213rem;
             transition: 1s ease-out;
         }
     }
 
-    @media screen and (width <= 520px) {
+    @media screen and (width <= 600px) {
         .bannerContent.WORK {
             height: 217rem;
             transition: 1s ease-out;
         }
     }
 
-    @media screen and (width <= 500px) {
+    @media screen and (width <= 550px) {
         .bannerContent.WORK {
             height: 219rem;
             transition: 1s ease-out;
         }
     }
+
+    @media screen and (width <= 520px) {
+        .bannerContent.WORK {
+            height: 220rem;
+            transition: 1s ease-out;
+        }
+    }
+
+    @media screen and (width <= 500px) {
+        .bannerContent.WORK {
+            height: 222rem;
+            transition: 1s ease-out;
+        }
+    }
     @media screen and (width <= 400px) {
         .bannerContent.WORK {
-            height: 225rem;
+            height: 228rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 450px) {
         .bannerContent.WORK {
-            height: 225rem;
+            height: 229rem;
             transition: 1s ease-out;
         }
     }
 
     @media screen and (width <= 350px) {
         .bannerContent.WORK {
-            height: 224rem;
+            height: 227rem;
             transition: 1s ease-out;
         }
     }
@@ -319,7 +335,7 @@ body {
         display: flex;
         flex-direction: column;
     }
- }
+}
 
 .bannerContent {
     /* margin-bottom: 2px; */
@@ -362,10 +378,20 @@ body {
     transition: 0.1s ease-in;
 }
 
-.nameHeader:hover {
-    font-weight: 900;
-    transition: 0.1s ease-in;
-    cursor: default;
+@media (hover: hover) {
+    .nameHeader:hover {
+        font-weight: 900;
+        transition: 0.1s ease-in;
+        cursor: default;
+    }
+}
+
+@media (hover: none) {
+    .nameHeader:active {
+        font-weight: 900;
+        transition: 0.1s ease-in;
+        cursor: default;
+    }
 }
 
 .subHeader {
@@ -692,7 +718,7 @@ body {
         padding-top: 2rem;
         flex: 1;
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         /* border: 1px solid blueviolet; */
     }
 
@@ -742,7 +768,7 @@ body {
     flex-direction: column;
     padding-top: 3rem;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     height: 100%;
     gap: 4rem;
 }
@@ -774,53 +800,77 @@ body {
     text-decoration: inherit;
 }
 
-.contactLink:hover {
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    transition: 0.2s ease-in-out;
+@media (hover: hover) {
+    .contactLink:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        transition: 0.2s ease-in-out;
+    }
+}
+
+@media (hover: none) {
+    .contactLink:active {
+        background-color: white;
+        color: black;
+    }
 }
 
 .footerContainer {
     /* background: rgb(109, 83, 83); */
     height: auto;
-    padding: .5rem 0rem .5rem .25rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #ffffff;
-    border-top:1px dotted rgb(133, 133, 133);
-    border-bottom:1px dotted rgb(133, 133, 133);
+    border-top: 1px dotted rgb(133, 133, 133);
+    border-bottom: 1px dotted rgb(133, 133, 133);
 }
 
 .footerAddress {
-    font-size: .75rem;
-    padding: 0 .5rem 0 0;
+    font-size: 0.75rem;
+    padding: 0 0.25rem;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 
-.footerAddress:hover {
-    background-color: white;
-    color: black;
-    transition: 0.2s ease-in-out;
+@media (hover: hover) {
+    .footerAddress:hover {
+        background-color: white;
+        color: black;
+        transition: 0.2s ease-in-out;
+    }
+
+    .footerLogo:hover {
+        cursor: pointer;
+        filter: blur(0.15rem);
+        transition: 0.1s ease-in-out;
+    }
+
+    .footerLogo:active {
+        filter: invert();
+    }
+}
+
+@media (hover: none) {
+    .footerAddress:active {
+        background-color: white;
+        color: black;
+        transition: 0.2s ease-in-out;
+    }
+
+    .footerLogo:active {
+        cursor: pointer;
+        filter: blur(0.15rem);
+        transition: 0.1s ease-in-out;
+    }
 }
 
 .footerLogo {
     position: relative;
     height: 2.5rem;
     width: 5rem;
-    margin-bottom: .2rem;
+    margin: 0 0.25rem;
     transition: 0.1s ease-in-out;
 }
-
-.footerLogo:hover {
-    cursor: pointer;
-    filter:blur(.15rem);
-    transition: 0.1s ease-in-out;
-}
-
-.footerLogo:active {
-    filter:invert();
-}
-
