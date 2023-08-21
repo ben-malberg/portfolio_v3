@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 
 const DetectTouch = () => {
+    const [isTouch, setIsTouch] = useState(false);
 
     useEffect(() => {
-        const check = () => "ontouchstart" in window;
-
-        return check()
+        setIsTouch("ontouchstart" in window);
     }, []);
+
+    return isTouch;
 };
 
 

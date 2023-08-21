@@ -16,7 +16,7 @@ const Navbar = ({ handleToggleBanner }: BannerProps) => {
         console.error("Error fetching BM logo: ", error);
     }
 
-    const isTouchDevice = "ontouchstart" in window;
+    const isTouchDevice = DetectTouch();
 
     return (
         <div className="navbarContainer">
@@ -25,10 +25,10 @@ const Navbar = ({ handleToggleBanner }: BannerProps) => {
                     <div
                         className="navbarLogoContainer"
                         onClick={
-                            !DetectTouch ? () => handleToggleBanner(3) : undefined
+                            !isTouchDevice ? () => handleToggleBanner(3) : undefined
                         }
                         onTouchStart={
-                            DetectTouch ? () => handleToggleBanner(3) : undefined
+                            isTouchDevice ? () => handleToggleBanner(3) : undefined
                         }
                     >
                         {logo ? (
