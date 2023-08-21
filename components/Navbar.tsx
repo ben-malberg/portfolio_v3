@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import PullImage from "@/utils/PullImage";
+import DetectTouch from "@/utils/DetectTouch";
 
 interface BannerProps {
     handleToggleBanner: (bannerIndex: number) => void;
@@ -15,13 +16,20 @@ const Navbar = ({ handleToggleBanner }: BannerProps) => {
         console.error("Error fetching BM logo: ", error);
     }
 
+    const isTouchDevice = "ontouchstart" in window;
+
     return (
         <div className="navbarContainer">
             {!isLoading && (
                 <>
                     <div
                         className="navbarLogoContainer"
-                        onClick={() => handleToggleBanner(3)}
+                        onClick={
+                            !DetectTouch ? () => handleToggleBanner(3) : undefined
+                        }
+                        onTouchStart={
+                            DetectTouch ? () => handleToggleBanner(3) : undefined
+                        }
                     >
                         {logo ? (
                             <>
