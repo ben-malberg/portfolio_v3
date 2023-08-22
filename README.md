@@ -1,12 +1,13 @@
-![](https://user-images.githubusercontent.com/86641253/255483877-272c7ef8-388e-4d5e-86c6-b71f44657334.png)
-![](https://user-images.githubusercontent.com/86641253/255437078-96c76a1c-4352-470b-b548-547faf04d3b9.png)
-<h1>portfolio under construction! 🚜</h1>
+![1690155957587](https://github.com/ben-malberg/portfolio_v3/assets/117685534/7bed6065-ec9a-40e6-a940-fca630e50d84)
 
-<h3>Stack</h3>
+<h1>Ben Malberg's Web Development Portfolio</h1>
+<h3>Stack used for this project:</h3>
 <ul>
     <li>Next.js</li>
     <li>Sanity.io</li>
     <li>React</li>
     <li>Typescript</li>
-    <li>SCSS</li>
 </ul>
+
+<strong>https://bmalberg.com</strong>
+

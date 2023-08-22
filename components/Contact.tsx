@@ -1,29 +1,32 @@
-import DownloadResumeUtil from "@/utils/DownloadResumeUtil";
-import PullImage from "@/utils/PullImage";
-import useSWR from "swr";
+// import DownloadResumeUtil from "@/utils/DownloadResumeUtil";
+// import useSWR from "swr";
 import { HiMiniArrowUpRight } from "react-icons/hi2";
 
 const Contact: React.FC = () => {
+    // disabled (useSWR and DownloadResumeUtil)
+    // until Safari web PDF compatibility sorted out
+    // pulling PDF from google docs link as a temp fix
+
     // SWR
     // Create a function to fetch the logo data
-    const fetchResume = async () => DownloadResumeUtil();
+    // const fetchResume = async () => DownloadResumeUtil();
     // Use the useSWR hook to fetch the data and handle caching
-    const {
-        data: resume,
-        error: error1,
-        isLoading: isLoading1,
-    } = useSWR("resume", fetchResume);
+    // const {
+    //     data: resume,
+    //     error: error1,
+    //     isLoading: isLoading1,
+    // } = useSWR("resume", fetchResume);
 
-    if (error1) {
-        return <>{`Error fetching resume from SWR: ", ${error1}`}</>;
-    }
+    // if (error1) {
+    //     return <>{`Error fetching resume from SWR: ", ${error1}`}</>;
+    // }
 
     return (
         <>
             <div className="contactContainer">
                 <div className="contactContactInfo">
                     <ul className="contactLinkItems">
-                        {isLoading1 ? (
+                        {/* {isLoading1 ? (
                             <li>LOADING RESUME</li>
                         ) : resume ? (
                             resume.map((item) => (
@@ -41,7 +44,18 @@ const Contact: React.FC = () => {
                             ))
                         ) : (
                             <li>RESUME UNAVAILABLE</li>
-                        )}
+                        )} */}
+                        <li>
+                            <a
+                                className="contactLink"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://drive.google.com/file/d/1U5_lpvmJ6FHxQJykkIFknCNN6h7lFUJ8/view?usp=sharing"
+                            >
+                                RESUME
+                            </a>
+                            <HiMiniArrowUpRight />
+                        </li>
                         <li>
                             <a
                                 className="contactLink"
@@ -77,10 +91,6 @@ const Contact: React.FC = () => {
                         </li>
                     </ul>
                 </div>
-                {/* <div className="contactLogoContainer">
-                    <div className="contactAddress">BEN MALBERG - BAY AREA CALIFORNIA USA</div>
-                    <div className="contactLogo">{logo}</div>
-                </div> */}
             </div>
         </>
     );
